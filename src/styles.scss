@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+footer {
+  background-color: #8e7361;
+  color: #320c08;
+  height: 50px;
+  width:100%;
+  bottom: 0;  //下に固定
+  margin-top:auto;
+
+  //上下左右中央揃えのやり方
+  display:flex;  //親要素をflexにしてあげる
+  justify-content: center;  //縦方向の中央
+  align-items: center;  //横方向の中央
+}
+
+.body {
+  text-align: center;
+  padding-top: 100px; // ヘッダーの後ろに要素が隠れないようにするため
+  min-height: 81vh; //コンテナ要素が少ない時にfooterを画面下部に表示する用(100vhでビューポート100%)
+  background-color: #eece9a15;
+}
+
+.button {
+  border-color: #c4872d;
+  color: #c4872d;
+  font-weight: 600;
+  margin-right: 2px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: #c4872d;
+    color: #fff;
+  }
+}
+
+.underline {
+  text-decoration: none;
+  border-bottom: double 5px #c4872d;
+}
+
+.error {
+  color: red;
+  font-weight: 700
+}

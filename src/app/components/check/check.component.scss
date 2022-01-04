@@ -1,0 +1,49 @@
+.table {
+  text-align: center;
+  width: 80%;
+  margin: 3px auto;
+  padding-top: 10px;
+  border-bottom: solid 5px #c4872d;
+}
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  background: #c4872d;
+  color: #fff;
+}
+.cartItem {
+  font-weight: 600;
+}
+.pic {
+  width: 200px;
+  height: 200px
+}
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: right;
+  margin-right: 115px
+}
+.form {
+  margin: auto;
+  width: 50.3%;
+  font-weight: 700;
+  color: #42231a;
+}
+.formTable {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+.odd {
+  background-color: #c3a780;
+}
+.even {
+  background-color: #c4872d60;
+}
+.subtitle {
+  margin: 40px auto 0px;
+  color: #fff;
+  width: 50%;
+  background-color: #c4872d;
+}

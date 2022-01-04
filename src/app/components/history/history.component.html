@@ -1,0 +1,16 @@
+<div class="body">
+  <table>
+    <tr class="title">
+      <th>購入日時</th>
+      <th>購入商品</th>
+      <th>合計金額</th>
+    </tr>
+    <tr class=items *ngFor="let item of historyData">
+      <td>{{item.orderDate}}</td>
+      <td>
+        <div *ngFor="let cafe of item.coffee">{{cafe}}</div>
+      </td>
+      <td>{{item.price}}</td>
+    </tr>
+  </table>
+</div>

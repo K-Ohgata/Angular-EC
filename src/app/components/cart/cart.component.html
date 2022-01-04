@@ -1,0 +1,39 @@
+<div class="body">
+  <h1 *ngIf="user"><u class="underline">{{user.displayName}}さんのショッピングカート</u></h1>
+  <h1 *ngIf="!user"><u class="underline">ショッピングカート</u></h1>
+
+  <div *ngIf="!myCart">カートに商品はありません。</div>
+  <div *ngIf="myCart">
+    <table class="table">
+      <tr class="title">
+        <th>商品名</th>
+        <th>商品イメージ</th>
+        <th>サイズ</th>
+        <th>数量</th>
+        <th>トッピング</th>
+        <th>小計(税抜)</th>
+        <th>削除</th>
+      </tr>
+
+      <tr class="cartItem" *ngFor="let item of myCart;index as i">
+        <td>{{item.coffee.name}}</td>
+        <td><img src="/assets{{item.coffee.pic}}" alt="product" width="150px" height="150px" class="pic" /></td>
+        <td>{{item.cart.size}}</td>
+        <td>{{item.cart.quantity}}</td>
+        <td>
+          <div *ngFor="let topping of item.cart.topping">{{topping}}</div>
+        </td>
+        <td>{{item.cart.total}}</td>
+        <td><button class="button" (click)="delItem(i)">削除</button></td>
+      </tr>
+    </table>
+    <div class="price">
+      <div>消費税：{{culcTax()}} 円</div>
+      <div><u class="underline">合計金額：{{culcPrice()}} 円 (税込)</u></div>
+    </div>
+    <div>
+      <button class="button" *ngIf="user" routerLink="/check">注文に進む</button>
+      <button class="button" *ngIf="!user" (click)="login()">ログインして注文する</button>
+    </div>
+  </div>
+</div>

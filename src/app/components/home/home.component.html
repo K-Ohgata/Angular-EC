@@ -1,0 +1,39 @@
+<div class="body">
+  <h1><u class="underline">商品検索</u></h1>
+  <div>
+    <input type='text' placeholder='商品を検索' value="{{keyword}}" [(ngModel)]="keyword" class="text" autoComplete="on" list="data" />
+    <datalist id="data">
+      <option *ngFor="let coffee of fetchCoffee" value="{{coffee.name}}"></option>
+    </datalist>
+    <button class="button" (click)="searchCoffee()">検索</button>
+    <button class="button" (click)="clear()">クリア</button>
+    <div class="sort">
+      <button class="button" (click)="highSort()">高い順</button>
+      <button class="button" (click)="lowSort()">低い順</button>
+    </div>
+  </div>
+
+  <div *ngIf="!fetchCoffee">Loading...</div>
+  <div class="list" *ngIf="!coffee">
+    <div class="card" *ngFor="let coffee of fetchCoffee">
+      <img src="/assets{{coffee.pic}}" alt='coffee' class="pic"  routerLink="/detail/{{coffee.id}}"/>
+      <div class="name" routerLink="/detail/{{coffee.id}}">{{coffee.name}}</div>
+      <div class="cardContent">
+        <div>Mサイズ:{{coffee.msizePrice}} 円</div>
+        <div>Lサイズ:{{coffee.lsizePrice}} 円</div>
+      </div>
+      <button class="button" routerLink="/detail/{{coffee.id}}">商品詳細へ</button>
+    </div>
+  </div>
+  <div class="list" *ngIf="coffee">
+    <div class="card" *ngFor="let coffee of coffee">
+      <img src="/assets{{coffee.pic}}" alt='coffee' class="pic" />
+      <div class="name">{{coffee.name}}</div>
+      <div class="cardContent">
+        <div>Mサイズ:{{coffee.msizePrice}} 円</div>
+        <div>Lサイズ:{{coffee.lsizePrice}} 円</div>
+      </div>
+      <button class="button" routerLink="/detail/{{coffee.id}}">商品詳細へ</button>
+    </div>
+  </div>
+</div>

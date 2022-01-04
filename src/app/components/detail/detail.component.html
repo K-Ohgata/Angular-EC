@@ -1,0 +1,45 @@
+<div class="body">
+  <h1><u class="underline">商品詳細</u></h1>
+  <img src="/assets{{select!.pic}}" alt='coffee' class="pic" />
+  <div class="name">{{select!.name}}</div>
+  <div class="size">
+    <div><label htmlFor='M'><input type='radio' id='M' name='size' value='M'[(ngModel)]="size"/>Mサイズ:{{select!.msizePrice}} 円</label></div>
+    <div><label htmlFor='L'><input type='radio' id='L' name='size' value='L'[(ngModel)]="size"/>Lサイズ:{{select!.lsizePrice}} 円</label></div>
+  </div>
+
+  <div class="error" *ngIf="!size">{{error}}</div>
+   <div class="count">数量:
+    <select name="number" [(ngModel)]="quantity">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+  </div>
+  <div>トッピング：１つにつき M 200円(税抜) L 300円(税抜)</div>
+  
+  <div class="topping">
+    <div class="toppingList" *ngFor="let item of topping">
+      <label><input type='checkbox' name="topping"  id="item!.name" (change)="setToppingList(item!.name)" /> {{item!.name}}</label>
+    </div>
+  </div>
+
+  <div class="price">
+    <div *ngIf="totalPrice() === 0"><u class="underline">合計金額：0 円 (税抜)</u></div>
+    <div *ngIf="totalPrice() !== 0"><u class="underline">合計金額：{{totalPrice()}} 円 (税抜)</u></div>
+  </div>
+
+  <div>
+    <button class="button" *ngIf="!flag" (click)="trueFlag()">カートに入れる</button>
+      <button class="button" *ngIf="flag" routerLink="/">商品一覧へ戻る</button>
+      <button class="button" *ngIf="flag" routerLink="/cart">カートへ</button>
+  </div>
+</div>

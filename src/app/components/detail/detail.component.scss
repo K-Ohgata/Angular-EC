@@ -1,0 +1,37 @@
+.pic {
+  width: 400px;
+  height: 350px;
+  box-shadow: 5px 5px 5px #ccc;
+}
+.size {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px
+}
+.name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.count {
+  font-size: 18px;
+  margin-bottom: 10px
+}
+.topping {
+  padding: 10px;
+  margin: 7px;
+  color: #232323;
+  background-color: #c3a78080;
+  border-left: solid 10px #42231a90;
+  width: 60%;
+  display: inline-block
+}
+.toppingList {
+  display: inline-block;
+}
+.price {
+  font-size: 18px;
+  margin: 10px auto;
+  font-weight: 700
+}
+
