@@ -37,7 +37,6 @@ export class CheckComponent implements OnInit {
     this.getCart()
     this.getToppings()
     this.getInfo()
-    console.log(this.errorText);
   }
 
   getUser(): void {

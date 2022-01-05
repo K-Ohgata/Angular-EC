@@ -37,7 +37,11 @@
     <div *ngIf="totalPrice() !== 0"><u class="underline">合計金額：{{totalPrice()}} 円 (税抜)</u></div>
   </div>
 
-  <div>
+  <div *ngIf="!user">
+    <button class="button" (click)="login()">ログインして注文する</button>
+  </div>
+
+  <div *ngIf="user">
     <button class="button" *ngIf="!flag" (click)="trueFlag()">カートに入れる</button>
       <button class="button" *ngIf="flag" routerLink="/">商品一覧へ戻る</button>
       <button class="button" *ngIf="flag" routerLink="/cart">カートへ</button>

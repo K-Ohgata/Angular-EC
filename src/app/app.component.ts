@@ -14,6 +14,13 @@ export class AppComponent {
   constructor(private fb: FirebaseService) {}
 
   ngOnInit(): void {
+    // this.fb.setCoffee()
+    // this.fb.setTopping()
+     if (this.fb.userSubject.getValue()) {
+      this.fb.fetchCart(this.fb.userSubject.getValue()!)
+    } else {
+      this.fb.setCart()
+    }
     this.fb.setCoffee()
     this.fb.setTopping()
   }

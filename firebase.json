@@ -1,1 +1,17 @@
-{}
+{
+  "hosting": {
+    "site": "angular-ec",
+    "public": "dist/angular-ec",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

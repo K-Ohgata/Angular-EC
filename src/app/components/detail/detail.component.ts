@@ -64,6 +64,10 @@ export class DetailComponent implements OnInit {
     }
   }
 
+  login() {
+    this.fb.login();
+  }
+
   totalPrice() {
     if (this.size === "M") {
       return this.select!.msizePrice! * Number(this.quantity) + this.toppings!.length * 200 * Number(this.quantity)

@@ -32,6 +32,6 @@ export class HeaderComponent implements OnInit {
   getCart(): void {
     this.fb.cartSubject.subscribe(cart =>
       this.cart = cart!
-    )
+      )
   }
 }

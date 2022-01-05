@@ -2,7 +2,7 @@
   <img src="assets/pic/header_logo.png" alt="logo" class="logo" routerLink="/" />
   <div class="right">
     <button class="headerButton" routerLink="/">商品一覧</button>
-    <button class="cartButton" routerLink="/cart" data-num=0>カート</button>
+    <button class="cartButton" routerLink="/cart" value="{{cart!.cartItemList!.length}}">カート</button>
     <button class="headerButton" routerLink="/history" *ngIf="user">注文履歴</button>
     <button class="headerButton" (click)="logout()" *ngIf="user">ログアウト</button>
     <button class="headerButton" (click)="login()" *ngIf="!user">ログイン</button>
